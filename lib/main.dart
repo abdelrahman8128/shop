@@ -57,8 +57,6 @@ class MyApp extends StatelessWidget {
       child: BlocConsumer<ShopCubit, ShopStates>(
         listener: (context, state) {
           print(state.toString());
-
-
         },
         builder: (context, state) {
 
@@ -69,9 +67,7 @@ class MyApp extends StatelessWidget {
 
             theme: lightTheme,
             darkTheme: darkTheme,
-            themeMode: isDark
-                ? ThemeMode.dark
-                : ThemeMode.light,
+            themeMode: ShopCubit.get(context).isDarkTheme? ThemeMode.dark: ThemeMode.light,
             home: startWidget,
           );
         },

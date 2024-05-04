@@ -68,6 +68,17 @@ class ShopLayout extends StatelessWidget {
             },
 
           ),
+          drawer: Drawer(
+            width: MediaQuery.sizeOf(context).width*0.40,
+
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                IconButton(onPressed:() =>  ShopCubit.get(context).changeAppTheme(), icon: ShopCubit.get(context).isDarkTheme?Icon(Icons.light_mode):Icon(Icons.nightlight_round_rounded)),
+              ],
+            ),
+          ),
         );
       },
     );
